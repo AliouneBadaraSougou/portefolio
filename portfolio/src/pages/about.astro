@@ -1,0 +1,125 @@
+---
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+
+
+<BaseLayout title="About | Alioune Badara SOUGOU" description="About Alioune Badara SOUGOU">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="A Propos de Moi"
+				tagline="Développeur fullstack junior, passionné par la technologie, les systèmes distribués et le développement web moderne."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/portrait1.jpg"
+					alt="Alioune Badara SOUGOU at work"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Parcours</h2>
+				<div class="content">
+					<p>
+						Je suis étudiant en troisième année de Licence en Informatique à l’École Supérieure Polytechnique de Dakar (ESP), spécialité Génie Logiciel et Systèmes d’Information. Mon parcours universitaire m’a permis de maîtriser les fondamentaux de l’informatique tout en développant des compétences solides en programmation, gestion de bases de données et services réseaux.
+					</p>
+					<p>
+						Titulaire d’un Baccalauréat S2 et d’un Diplôme Supérieur de Technologie en Informatique (DST), je suis passionné par le développement fullstack et l’architecture des applications web modernes.
+					</p>
+					<p>
+						Au fil de ma formation, j’ai participé à de nombreux projets : application de gestion de bibliothèque (Java & MySQL), serveur de messagerie (Roundcube), projet réseau complet avec DNS, vsftpd et iRedMail, site de parrainage électoral (Laravel), plateforme d’apprentissage de l’IA (Node.js & Express), bibliothèque numérique (Flask & SQLAlchemy), ou encore un site de gestion de candidatures étudiants/entreprises. J’ai également effectué un stage de 6 mois à la Sonatel en tant que développeur.
+					</p>
+					<p>
+						Ces expériences m'ont permis de consolider mes compétences techniques, de travailler en équipe et de me familiariser avec les méthodologies agiles. L’ensemble de mes réalisations est disponible sur mon GitHub.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Formation</h2>
+				<div class="content">
+					<ul>
+						<li>🎓 Licence 3 Informatique – Génie Logiciel et Systèmes d’Information – ESP Dakar (en cours)</li>
+						<li>🎓 Diplôme Supérieur de Technologie en Informatique (DST) – ESP Dakar</li>
+						<li>🎓 Baccalauréat S2</li>
+					</ul>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Compétences</h2>
+				<div class="content">
+					<ul>
+						<li>💻 Langages : HTML, CSS, JavaScript, Java, PHP, Python, C</li>
+						<li>⚙️ Frameworks : Laravel, Express.js, Flask, Astro, Node.js</li>
+						<li>🗄️ Bases de données : MySQL, PostgreSQL, MongoDB</li>
+						<li>🔧 Outils : Git & GitHub, VS Code, Android Studio</li>
+						<li>🌐 Réseau : DNS, DHCP, vsftpd, iRedMail, hébergement Linux</li>
+					</ul>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
